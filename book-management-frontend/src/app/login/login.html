@@ -1,0 +1,41 @@
+<div class="container mt-5" style="max-width: 400px;">
+  <h2 class="text-center mb-4">{{ isRegisterMode ? 'Register' : 'Login' }}</h2>
+
+  <form (ngSubmit)="onSubmit()">
+    <div class="mb-3">
+      <label for="username" class="form-label">Username</label>
+      <input
+        type="text"
+        id="username"
+        name="username"
+        class="form-control"
+        [(ngModel)]="username"
+        required
+        ngModel
+      />
+    </div>
+
+    <div class="mb-3">
+      <label for="password" class="form-label">Password</label>
+      <input
+        type="password"
+        id="password"
+        name="password"
+        class="form-control"
+        [(ngModel)]="password"
+        required
+        ngModel
+      />
+    </div>
+
+    <button type="submit" class="btn btn-primary w-100">
+      {{ isRegisterMode ? 'Register' : 'Login' }}
+    </button>
+
+    <div class="text-center mt-3">
+      <a href="#" (click)="toggleMode(); $event.preventDefault()">
+        {{ isRegisterMode ? 'Already have an account? Login' : 'Don\'t have an account? Register' }}
+      </a>
+    </div>
+  </form>
+</div>

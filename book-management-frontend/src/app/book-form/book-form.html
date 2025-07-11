@@ -1,0 +1,31 @@
+<div class="container mt-5" style="max-width: 600px;">
+  <div class="card shadow">
+    <div class="card-body">
+      <h3 class="card-title mb-4 text-center">
+        {{ isEditMode ? 'Edit Book' : 'Add Book' }}
+      </h3>
+
+      <form [formGroup]="bookForm" (ngSubmit)="onSubmit()">
+        <div class="mb-3">
+          <label class="form-label">ISBN</label>
+          <input type="text" class="form-control" formControlName="isbn" [readonly]="isEditMode" />
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Title</label>
+          <input type="text" class="form-control" formControlName="title" />
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Author</label>
+          <input type="text" class="form-control" formControlName="author" />
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Publication Year</label>
+          <input type="number" class="form-control" formControlName="publicationYear" />
+        </div>
+        <button type="submit" class="btn btn-primary w-100">
+          {{ isEditMode ? 'Update Book' : 'Add Book' }}
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
